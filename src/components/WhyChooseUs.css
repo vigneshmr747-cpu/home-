@@ -1,0 +1,380 @@
+.hr-why {
+  position: relative;
+  width: 100%;
+  background-color: #13161d;
+  color: #ffffff;
+  padding: 96px 0;
+  overflow: hidden;
+}
+
+.hr-why-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.16;
+  filter: grayscale(40%);
+  pointer-events: none;
+}
+
+.hr-why-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(19, 22, 29, 0.94) 0%,
+    rgba(19, 22, 29, 0.88) 55%,
+    rgba(19, 22, 29, 0.94) 100%
+  );
+  pointer-events: none;
+}
+
+/* Subtle decorative plus signs & dots from Screenshot 3 */
+.hr-why-plus-deco {
+  position: absolute;
+  top: 28px;
+  left: 11%;
+  color: rgba(255, 94, 20, 0.35);
+  font-size: 26px;
+  font-weight: 300;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hr-why-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hr-why-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 0;
+  align-items: stretch;
+}
+
+/* LEFT COLUMN: WHY CHOOSE US + Pillars (Screenshot 3) */
+.hr-why-left {
+  display: flex;
+  gap: 28px;
+  padding-right: 48px;
+  opacity: 0;
+  transform: translate3d(-22px, 0, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hr-why.is-visible .hr-why-left {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hr-why-side-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+  flex-shrink: 0;
+}
+
+.hr-why-vertical-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff5e14;
+  white-space: nowrap;
+}
+
+.hr-why-rail-line {
+  width: 1.5px;
+  flex: 1;
+  min-height: 180px;
+  background-color: rgba(255, 94, 20, 0.48);
+}
+
+.hr-why-rail-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff5e14;
+}
+
+.hr-why-left-body {
+  flex: 1;
+}
+
+.hr-why-heading {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.95rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-wrap: balance;
+}
+
+.hr-why-subtitle {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #b8bec9;
+  margin: 0 0 36px 0;
+  max-width: 48ch;
+}
+
+.hr-why-steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.hr-why-step-btn {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  margin: -6px -8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.hr-why-step-btn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.hr-why-step-btn:focus-visible {
+  outline: 2px solid #ff5e14;
+  outline-offset: 2px;
+}
+
+.hr-why-step-num {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #262b36;
+  color: #e5e7eb;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.hr-why-step-btn.is-active .hr-why-step-num {
+  background-color: #ff5e14;
+  color: #ffffff;
+  border-color: #ff5e14;
+  box-shadow: 0 0 0 5px rgba(255, 94, 20, 0.24);
+}
+
+.hr-why-step-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.hr-why-step-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #a9b0bc;
+  margin: 0;
+}
+
+/* RIGHT COLUMN: SINCE 2003 + Quote (Screenshot 3) */
+.hr-why-right {
+  position: relative;
+  padding-left: 56px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 0.7s ease 0.12s,
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+.hr-why.is-visible .hr-why-right {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hr-why-arrow-watermark {
+  position: absolute;
+  top: 0;
+  right: 16%;
+  opacity: 0.08;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.hr-why-since-block {
+  padding-top: 26px;
+  padding-bottom: 36px;
+}
+
+.hr-why-since-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.hr-why-year {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2.6rem, 4.4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ff5e14;
+  margin-bottom: 22px;
+}
+
+.hr-why-heritage-text {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #c9cdd6;
+  margin: 0 0 22px 0;
+  max-width: 44ch;
+}
+
+.hr-why-history-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid #ff5e14;
+  padding: 0 0 4px 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff5e14;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hr-why-history-link:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hr-why-history-panel {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.hr-why-quote-box {
+  padding-top: 34px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hr-why-quote-icon {
+  color: rgba(255, 94, 20, 0.65);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hr-why-quote-text {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+}
+
+.hr-why-quote-author {
+  font-size: 13.5px;
+  color: #9ca3af;
+}
+
+.hr-why .custom-btn--primary:hover,
+.hr-why .custom-btn--primary:active {
+  background-color: #080a0e;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 980px) {
+  .hr-why {
+    padding: 72px 0;
+  }
+
+  .hr-why-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hr-why-left {
+    padding-right: 0;
+  }
+
+  .hr-why-right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hr-why {
+    padding: 56px 0;
+  }
+
+  .hr-why-container {
+    padding: 0 18px;
+  }
+
+  .hr-why-left {
+    gap: 14px;
+  }
+
+  .hr-why-rail-line {
+    min-height: 110px;
+  }
+
+  .hr-why-quote-box {
+    gap: 14px;
+  }
+}

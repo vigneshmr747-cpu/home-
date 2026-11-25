@@ -1,0 +1,6 @@
+{
+  "name": "HomeRise Construction — About Us",
+  "description": "Responsive About Us section for HomeRise Construction featuring layered construction imagery, design & build and general contracting highlights, and smooth viewport animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

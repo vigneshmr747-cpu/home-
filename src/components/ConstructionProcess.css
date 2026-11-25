@@ -1,0 +1,208 @@
+.hr-process {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 96px 0;
+}
+
+.hr-process-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hr-process-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 60px auto;
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 0.65s ease,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hr-process.is-visible .hr-process-header {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hr-process-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff5e14;
+  margin-bottom: 12px;
+}
+
+.hr-process-eyebrow-wing {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hr-process-eyebrow-line {
+  width: 24px;
+  height: 1.5px;
+  background-color: #ff5e14;
+}
+
+.hr-process-eyebrow-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #ff5e14;
+  background-color: #ffffff;
+}
+
+.hr-process-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #14161b;
+  margin: 0;
+}
+
+.hr-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+}
+
+/* Soft peach semicircular dome arch behind each step (exact Screenshot 4) */
+.hr-process-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px 44px 24px;
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.65s ease;
+}
+
+.hr-process.is-visible .hr-process-card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.hr-process.is-visible .hr-process-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.hr-process.is-visible .hr-process-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.hr-process-dome {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  padding: 58px 22px 32px 22px;
+  margin-top: 34px;
+  border-radius: 160px 160px 0 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 94, 20, 0.25) 0%,
+    rgba(255, 94, 20, 0.08) 55%,
+    rgba(255, 94, 20, 0) 100%
+  );
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hr-process-card:hover .hr-process-dome {
+  transform: translate3d(0, -4px, 0);
+}
+
+.hr-process-icon-circle {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: #f3f4f7;
+  border: 6px solid #ffffff;
+  color: #ff5e14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(20, 22, 27, 0.06);
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+.hr-process-card:hover .hr-process-icon-circle {
+  background-color: #ff5e14;
+  color: #ffffff;
+}
+
+.hr-process-step-label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ff5e14;
+  margin-bottom: 8px;
+}
+
+.hr-process-step-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #14161b;
+  margin: 0 0 10px 0;
+}
+
+.hr-process-step-desc {
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: #5b616d;
+  margin: 0 auto;
+  max-width: 28ch;
+}
+
+@media (max-width: 960px) {
+  .hr-process {
+    padding: 72px 0;
+  }
+
+  .hr-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hr-process {
+    padding: 56px 0;
+  }
+
+  .hr-process-container {
+    padding: 0 18px;
+  }
+
+  .hr-process-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hr-process-header {
+    margin-bottom: 36px;
+  }
+}
